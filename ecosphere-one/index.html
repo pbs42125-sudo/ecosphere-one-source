@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5faf7">
+  <meta name="description" content="EcoSphere One — AI-powered sustainable campus digital twin concept.">
+  <title>EcoSphere One | Sustainable Campus Digital Twin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" data-page="home">
+        <span class="brand-mark">◈</span><span><b>EcoSphere One</b><small>DSU Harohalli Campus</small></span>
+      </a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav">
+        <a href="#home" data-page="home" class="nav-link active"><span>⌂</span> Home</a>
+        <a href="#dashboard" data-page="dashboard" class="nav-link"><span>▦</span> Dashboard</a>
+        <a href="#digital-twin" data-page="digital-twin" class="nav-link"><span>◇</span> 3D Digital Twin</a>
+        <a href="#campus-tour" data-page="campus-tour" class="nav-link"><span>◎</span> 360° Campus Tour</a>
+        <a href="#waste" data-page="waste" class="nav-link"><span>♻</span> Smart Waste</a>
+        <a href="#energy" data-page="energy" class="nav-link"><span>ϟ</span> Energy</a>
+        <a href="#water" data-page="water" class="nav-link"><span>♧</span> Water</a>
+        <a href="#ecoadvisor" data-page="ecoadvisor" class="nav-link"><span>✧</span> EcoAdvisor AI</a>
+        <a href="#reports" data-page="reports" class="nav-link"><span>▤</span> Reports & Export</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div><div><b>Demo environment</b><small>Sensor integrations not connected</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="crumb"><span class="crumb-dot"></span><span id="topTitle">Home</span></div>
+        <div class="top-actions"><span class="demo-pill">DEMO DATA</span><button class="icon-button" id="resetDemo" title="Reset demo values">↻</button></div>
+      </header>
+
+      <section class="page active" id="page-home">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="pulse"></span> INTELLIGENT CAMPUS ECOSYSTEM</div>
+            <h1>One campus.<br><em>One intelligent</em><br>ecosystem.</h1>
+            <p>Explore a smarter, greener campus through computer vision, environmental analytics and an interactive digital twin.</p>
+            <div class="hero-actions">
+              <button class="btn primary" data-go="digital-twin">Explore 3D campus <span>↗</span></button>
+              <button class="btn secondary" data-go="dashboard">View dashboard</button>
+            </div>
+            <div class="hero-note"><span class="mini-check">✓</span> Computer Vision <span class="mini-check">✓</span> Digital Twin <span class="mini-check">✓</span> Sustainability AI</div>
+          </div>
+          <div class="hero-visual">
+            <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+            <div class="visual-badge badge-top"><span class="green-dot"></span> Campus twin preview</div>
+            <div class="hero-building">
+              <div class="building-roof"></div><div class="building-body"><div class="window-grid"></div></div>
+              <div class="building-wing"><div class="window-grid small-grid"></div></div>
+              <div class="ground"></div><div class="tree tree-a"></div><div class="tree tree-b"></div>
+            </div>
+            <div class="visual-badge badge-bottom"><span>↗</span> Resource intelligence</div>
+          </div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">AT A GLANCE</span><h2>Campus sustainability overview</h2></div><button class="text-button" data-go="dashboard">Full dashboard →</button></div>
+        <div class="kpi-grid">
+          <article class="kpi-card"><div class="kpi-top"><span>Electricity</span><span class="kpi-icon green">ϟ</span></div><div class="kpi-value">2,725 <small>kWh</small></div><div class="kpi-foot"><span class="positive">↓ 8.4%</span> vs previous period</div><div class="source">Source: simulated demo data</div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Water usage</span><span class="kpi-icon blue">♧</span></div><div class="kpi-value">13,184 <small>L</small></div><div class="kpi-foot"><span class="positive">↓ 5.2%</span> vs previous period</div><div class="source">Source: simulated demo data</div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Waste recorded</span><span class="kpi-icon amber">♻</span></div><div class="kpi-value">41 <small>kg</small></div><div class="kpi-foot"><span class="positive">78%</span> recycling rate</div><div class="source">Source: simulated demo data</div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Carbon emissions</span><span class="kpi-icon violet">⌁</span></div><div class="kpi-value">1,934 <small>kg CO₂e</small></div><div class="kpi-foot"><span class="positive">232 kg</span> estimated avoided</div><div class="source">Source: calculated from demo data</div></article>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">EXPLORE</span><h2>One platform, connected insights</h2></div></div>
+        <div class="feature-grid">
+          <button class="feature-card" data-go="digital-twin"><span class="feature-icon green">◇</span><h3>3D Digital Twin</h3><p>Explore a conceptual campus model and inspect building-level demo indicators.</p><span class="feature-link">Launch 3D view ↗</span></button>
+          <button class="feature-card" data-go="waste"><span class="feature-icon amber">♻</span><h3>Smart Waste</h3><p>Upload a photo, try the demo workflow and review waste segregation guidance.</p><span class="feature-link">Analyze waste ↗</span></button>
+          <button class="feature-card" data-go="energy"><span class="feature-icon blue">ϟ</span><h3>Energy Intelligence</h3><p>Explore usage patterns and test potential energy-saving scenarios.</p><span class="feature-link">View energy ↗</span></button>
+          <button class="feature-card" data-go="ecoadvisor"><span class="feature-icon violet">✧</span><h3>EcoAdvisor AI</h3><p>Get rule-based sustainability guidance based on the demo data.</p><span class="feature-link">Ask EcoAdvisor ↗</span></button>
+        </div>
+        <div class="notice"><span class="notice-icon">i</span><div><b>Prototype transparency</b><p>This is a portfolio-ready demo. Campus measurements shown here are simulated. The official DSU 360° tour opens separately; no live sensor or tour API is connected.</p></div></div>
+      </section>
+
+      <section class="page" id="page-dashboard">
+        <div class="page-heading"><div><span class="eyebrow">OVERVIEW</span><h1>Executive dashboard</h1><p>Campus-wide environmental intelligence · DSU Harohalli</p></div><div class="heading-actions"><button class="btn primary" data-go="digital-twin">◇ Explore 3D Twin</button><select id="dateRange" class="select"><option value="today">Today</option><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option></select></div></div>
+        <div class="kpi-grid">
+          <article class="kpi-card"><div class="kpi-top"><span>Electricity</span><span class="kpi-icon green">ϟ</span></div><div class="kpi-value" id="energyKpi">38,896 <small>kWh</small></div><div class="kpi-foot">Est. savings: 4,667 kWh</div><div class="source">Source: simulated</div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Water</span><span class="kpi-icon blue">♧</span></div><div class="kpi-value">173,045 <small>litres</small></div><div class="kpi-foot">Est. savings: 13,844 L</div><div class="source">Source: simulated</div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Waste</span><span class="kpi-icon amber">♻</span></div><div class="kpi-value">441 <small>kg</small></div><div class="kpi-foot">Recycling: 73%</div><div class="source">Source: simulated</div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Carbon</span><span class="kpi-icon violet">⌁</span></div><div class="kpi-value">27,616 <small>kg CO₂e</small></div><div class="kpi-foot">Avoided: 3,314 kg</div><div class="source">Source: calculated</div></article>
+        </div>
+        <div class="chart-grid">
+          <article class="panel chart-panel"><div class="panel-heading"><div><h3>Energy consumption</h3><p>Demo trend across selected period</p></div><span class="chart-legend"><i></i> kWh</span></div><div class="chart" id="energyChart"></div></article>
+          <article class="panel chart-panel"><div class="panel-heading"><div><h3>Waste composition</h3><p>Recorded demo waste by category</p></div></div><div class="donut-wrap"><div class="donut"><div><b>441 kg</b><small>Total waste</small></div></div><div class="legend-list"><span><i class="c1"></i>Organic <b>36%</b></span><span><i class="c2"></i>Plastic <b>24%</b></span><span><i class="c3"></i>Paper <b>22%</b></span><span><i class="c4"></i>Other <b>18%</b></span></div></div></article>
+          <article class="panel chart-panel"><div class="panel-heading"><div><h3>Water consumption</h3><p>Illustrative daily trend</p></div></div><div class="chart" id="waterChart"></div></article>
+          <article class="panel"><div class="panel-heading"><div><h3>Priority observations</h3><p>Example alerts — not live campus alerts</p></div><span class="count-pill">3</span></div><div class="alert-list"><div class="alert-row"><span class="alert-mark red">!</span><div><b>Elevated energy use</b><p>Academic Block A · demo observation</p></div><span class="severity red-text">High</span></div><div class="alert-row"><span class="alert-mark amber">!</span><div><b>Waste collection needed</b><p>Cafeteria zone · demo observation</p></div><span class="severity amber-text">Medium</span></div><div class="alert-row"><span class="alert-mark blue">i</span><div><b>Water reading missing</b><p>Library zone · sample alert</p></div><span class="severity blue-text">Info</span></div></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-digital-twin">
+        <div class="page-heading"><div><span class="eyebrow">SPATIAL INTELLIGENCE</span><h1>3D Digital Twin</h1><p>Interactive conceptual campus model · not a survey-accurate reconstruction</p></div><span class="live-pill"><i></i> Interactive demo</span></div>
+        <div class="twin-layout">
+          <div class="panel twin-panel"><div class="panel-heading"><div><h3>DSU Harohalli — campus overview</h3><p>Drag to rotate · scroll to zoom · select a building</p></div><button class="btn secondary small" id="resetCamera">Reset view</button></div><div id="threeCanvas" class="three-canvas"><div class="canvas-loading" id="canvasFallback">Loading 3D campus…</div></div><div class="twin-legend"><span><i class="legend-green"></i> Normal</span><span><i class="legend-amber"></i> Attention</span><span><i class="legend-red"></i> Alert</span><span class="source">Conceptual geometry · demo values</span></div></div>
+          <aside class="panel building-panel"><span class="eyebrow">SELECTED ZONE</span><h2 id="buildingName">Academic Block A</h2><p id="buildingDesc">Teaching and classroom zone</p><div class="building-stats"><div><span>Energy</span><b id="buildingEnergy">420 kWh</b></div><div><span>Water</span><b id="buildingWater">1,850 L</b></div><div><span>Occupancy</span><b id="buildingOccupancy">68 demo people</b></div></div><div class="divider"></div><h3>Visualization layers</h3><label class="toggle-row"><span>Energy overlay</span><input type="checkbox" id="energyLayer" checked><i></i></label><label class="toggle-row"><span>Water markers</span><input type="checkbox" id="waterLayer" checked><i></i></label><label class="toggle-row"><span>Waste hotspots</span><input type="checkbox" id="wasteLayer" checked><i></i></label><div class="divider"></div><h3>Virtual lighting simulation</h3><p class="muted">Switch model lights off to explore a hypothetical saving. No real equipment is controlled.</p><label class="toggle-row"><span>Campus lights</span><input type="checkbox" id="lightsToggle" checked><i></i></label><div class="saving-box"><span>Estimated scenario saving</span><b id="savingValue">0.0 kWh/day</b></div></aside>
+        </div>
+      </section>
+
+      <section class="page" id="page-campus-tour">
+        <div class="page-heading"><div><span class="eyebrow">IMMERSIVE CAMPUS</span><h1>DSU 360° Campus Tour</h1><p>Open the official virtual tour to explore the campus.</p></div></div>
+        <div class="panel tour-panel"><div class="tour-art"><div class="tour-circle">◎</div><span class="eyebrow">OFFICIAL EXTERNAL TOUR</span><h2>Explore DSU Harohalli in 360°</h2><p>The external tour may prevent embedding. Open it in a new tab for the intended interactive experience.</p><a class="btn primary" href="https://www.turiya.co/360/DSU/Harohalli/" target="_blank" rel="noopener noreferrer">Open official 360° tour ↗</a></div><div class="tour-details"><div><b>Official tour</b><span>Hosted by Turiya</span></div><div><b>Digital twin relationship</b><span>Visual reference only; no sensor data is extracted from the tour.</span></div></div></div>
+      </section>
+
+      <section class="page" id="page-waste">
+        <div class="page-heading"><div><span class="eyebrow">CIRCULAR CAMPUS</span><h1>Smart Waste Management</h1><p>Try the image-upload workflow and review responsible disposal guidance.</p></div></div>
+        <div class="two-col"><div class="panel"><div class="panel-heading"><div><h3>Waste image lab</h3><p>Demo mode — no real vision model is connected</p></div></div><label class="upload-box" for="wasteImage"><span class="upload-symbol">↑</span><b>Choose an image</b><span>JPG, PNG or WEBP · camera images can be selected from your device</span><input type="file" id="wasteImage" accept="image/*"></label><img id="imagePreview" class="image-preview hidden" alt="Selected waste image preview"><button class="btn primary full" id="analyzeWaste">Run demo analysis</button><div id="wasteResult" class="result-box hidden"></div></div><div class="panel"><h3>Segregation guide</h3><div class="guide-row"><span class="bin-icon green-bg">♻</span><div><b>Organic</b><p>Food scraps and plant waste → composting stream.</p></div></div><div class="guide-row"><span class="bin-icon blue-bg">▤</span><div><b>Paper & cardboard</b><p>Keep dry and separate from food contamination.</p></div></div><div class="guide-row"><span class="bin-icon amber-bg">◇</span><div><b>Plastic and metal</b><p>Follow local recycling rules; empty containers first.</p></div></div><div class="guide-row"><span class="bin-icon violet-bg">!</span><div><b>E-waste</b><p>Use an authorized collection point; do not mix with general waste.</p></div></div></div></div>
+      </section>
+
+      <section class="page" id="page-energy">
+        <div class="page-heading"><div><span class="eyebrow">RESOURCE EFFICIENCY</span><h1>Energy Intelligence</h1><p>Understand consumption patterns and explore hypothetical savings.</p></div></div>
+        <div class="two-col"><div class="panel"><h3>Energy saving calculator</h3><p class="muted">Adjust assumptions to estimate a potential saving scenario.</p><label class="field-label">Lights to switch off <b id="lightCountLabel">20</b><input id="lightCount" type="range" min="1" max="100" value="20"></label><label class="field-label">Power per light (watts)<b id="wattLabel">18 W</b><input id="wattage" type="range" min="5" max="100" value="18"></label><label class="field-label">Hours per day<b id="hoursLabel">6 hours</b><input id="hours" type="range" min="1" max="16" value="6"></label><div class="saving-box large"><span>Potential energy saving</span><b id="energySaving">2.16 kWh/day</b><small id="costSaving">₹18.36/day at demo tariff ₹8.50/kWh</small></div></div><div class="panel"><h3>Energy recommendations</h3><div class="recommendation"><span class="rec-number">01</span><div><b>Review after-hours lighting</b><p>Compare room occupancy observations with energy readings before deciding to switch lights off.</p></div></div><div class="recommendation"><span class="rec-number">02</span><div><b>Track peak periods</b><p>Collect timestamped meter readings to identify repeatable demand peaks.</p></div></div><div class="recommendation"><span class="rec-number">03</span><div><b>Validate savings</b><p>Compare measured consumption before and after each intervention.</p></div></div></div></div>
+      </section>
+
+      <section class="page" id="page-water">
+        <div class="page-heading"><div><span class="eyebrow">WATER STEWARDSHIP</span><h1>Water Intelligence</h1><p>Monitor recorded usage and flag unusual readings.</p></div></div>
+        <div class="two-col"><div class="panel"><h3>Add a water observation</h3><form id="waterForm"><label class="field-label">Campus zone<input required id="waterZone" placeholder="e.g. Library block"></label><label class="field-label">Reading (litres)<input required id="waterReading" type="number" min="0" step="0.1" placeholder="Enter measured litres"></label><label class="field-label">Date<input required id="waterDate" type="date"></label><button class="btn primary" type="submit">Save observation</button></form><div id="waterMessage" class="form-message"></div></div><div class="panel"><h3>Recent observations</h3><p class="muted">Entries are stored in this browser for this prototype. They are not live meter data.</p><div id="waterRecords" class="record-list"><div class="empty-state">No manually entered observations yet.</div></div></div></div>
+      </section>
+
+      <section class="page" id="page-ecoadvisor">
+        <div class="page-heading"><div><span class="eyebrow">SUSTAINABILITY ASSISTANT</span><h1>EcoAdvisor</h1><p>Rule-based guidance for this prototype; a generative AI service is not connected.</p></div></div>
+        <div class="panel advisor-panel"><div class="advisor-intro"><span class="advisor-avatar">✧</span><div><b>EcoAdvisor</b><p>Ask about energy, water, waste or practical sustainability actions.</p></div></div><div class="suggested-questions"><button class="chip" data-question="How can we reduce electricity use?">Reduce electricity use</button><button class="chip" data-question="How should campus waste be segregated?">Improve recycling</button><button class="chip" data-question="How can we detect water leaks?">Detect water leaks</button><button class="chip" data-question="Explain the current demo dashboard">Explain demo metrics</button></div><div class="chat-log" id="chatLog"><div class="chat-bubble bot">Hi! I’m EcoAdvisor. I can offer rule-based sustainability suggestions. The current dashboard uses simulated sample data, not live DSU measurements.</div></div><form id="chatForm" class="chat-form"><input id="chatInput" placeholder="Ask a sustainability question…" required><button class="btn primary" type="submit">Send ↑</button></form></div>
+      </section>
+
+      <section class="page" id="page-reports">
+        <div class="page-heading"><div><span class="eyebrow">TRANSPARENT REPORTING</span><h1>Reports & Export</h1><p>Download a snapshot of prototype metrics and your manually entered water observations.</p></div></div>
+        <div class="report-grid"><div class="panel"><span class="report-icon green">▤</span><h3>Dashboard summary CSV</h3><p>Export KPI names, values, units, and data-source labels.</p><button class="btn primary" id="exportCsv">Download CSV</button></div><div class="panel"><span class="report-icon blue">↧</span><h3>Water observations CSV</h3><p>Export the water readings you entered in this browser.</p><button class="btn secondary" id="exportWater">Download water CSV</button></div><div class="panel"><span class="report-icon violet">ⓘ</span><h3>Project transparency</h3><p>Demo metrics are illustrative. Carbon figures are examples, not verified campus emissions.</p><button class="btn secondary" data-go="dashboard">Review dashboard</button></div></div>
+      </section>
+      <footer class="footer"><span>EcoSphere One · AI-Powered Sustainable Campus</span><span>Hackathon prototype · Demo data clearly labelled</span><a href="https://www.turiya.co/360/DSU/Harohalli/" target="_blank" rel="noopener noreferrer">Official DSU 360° tour ↗</a></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
